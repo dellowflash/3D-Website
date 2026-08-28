@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #070712;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 3D Canvas */
+#three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 7, 18, 0.65);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span,
+h1 span,
+h2 span {
+    color: #9b5cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #9b5cff;
+}
+
+/* Hero */
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #b78cff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #c5c5d0;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #7b2ff7, #c86bff);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(123, 47, 247, 0.4);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(123, 47, 247, 0.6);
+}
+
+.scroll-text {
+    position: absolute;
+    bottom: 30px;
+    left: 10%;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #aaa;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 120px 10%;
+    position: relative;
+}
+
+section h2 {
+    font-size: clamp(35px, 5vw, 65px);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    background: rgba(155, 92, 255, 0.15);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #b9b9c5;
+    line-height: 1.7;
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+    min-height: 70vh;
+}
+
+#message {
+    margin-top: 20px;
+    color: #b78cff;
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: #999;
+    font-size: 13px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    main {
+        padding: 100px 7%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 100px 7%;
+    }
+}
